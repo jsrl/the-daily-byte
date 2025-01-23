@@ -1,5 +1,3 @@
-import pytest
-
 from src.the_daily_byte.january_25 import reverse_string, is_palindrome, returns_to_origin, is_capitalized_correctly
 
 
@@ -26,7 +24,6 @@ def test_returns_to_origin():
     assert returns_to_origin("RUULLDRD") == True
     assert returns_to_origin("") == True  # Edge case: no moves
     assert returns_to_origin("UDLR") == True  # Moves that cancel out
-    assert returns_to_origin("UUUDDD") == False  # Moves that don't cancel out
 
 # Tests for is_capitalized_correctly
 def test_is_capitalized_correctly():

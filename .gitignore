@@ -1,1 +1,9 @@
 .idea
+# Ignore __pycache__ folders
+__pycache__/
+# Ignore .pyc files
+*.pyc
+# Ignore .pyo files (optimized bytecode)
+*.pyo
+# Ignore .pyd files (compiled modules on Windows)
+*.pyd
