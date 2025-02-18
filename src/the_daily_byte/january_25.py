@@ -82,3 +82,30 @@ def is_capitalized_correctly(s: str) -> bool:
         return True
     # If none of the above, return False
     return False
+
+"""
+This question is asked by Apple. Given two binary strings (strings containing only 1s and 0s) return their sum (also as a binary string).
+Note: neither binary string will contain leading 0s unless the string itself is 0
+"""
+def add_binary(a: str, b: str) -> str:
+    # Convert the binary strings to integers, sum them, and convert the result back to binary
+    return bin(int(a, 2) + int(b, 2))[2:]
+
+"""
+This question is asked by Microsoft. Given an array of strings, return the longest common prefix that is shared amongst all strings.
+Note: you may assume all strings only contain lowercase alphabetical characters.
+
+Ex: Given the following arrays...
+
+["colorado", "color", "cold"], return "col"
+["a", "b", "c"], return ""
+["spot", "spotty", "spotted"], return "spot"
+"""
+def longest_common_prefix(strs) -> str:
+    if not strs: return ""               # Return empty string if the list is empty
+    prefix = strs[0]                     # Start with the first string as the prefix
+    for s in strs[1:]:                   # Compare the prefix with each string
+        while not s.startswith(prefix):  # If prefix is not found, reduce it
+            prefix = prefix[:-1]
+            if not prefix: return ""     # Return empty if no common prefix
+    return prefix
